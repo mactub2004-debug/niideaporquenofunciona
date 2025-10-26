@@ -1,11 +1,11 @@
 'use client';
 
 import './globals.css';
-import { useEffect, ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { UserDataProvider, useUserData } from '@/contexts/user-data-provider';
-import { Toaster } from '@/components/ui/toaster';
-import BottomNav from '@/components/common/bottom-nav';
+import { Toaster } from '@/components/ui/toaster'; // <-- Descomentado
+import BottomNav from '@/components/common/bottom-nav'; // <-- Descomentado
 import { Loader2 } from 'lucide-react';
 
 const AUTH_ROUTES = ['/login', '/signup', '/onboarding'];
@@ -15,35 +15,20 @@ function AppContent({ children }: { children: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
 
+  // --- useEffect SIGUE COMENTADO POR AHORA ---
+  /*
   useEffect(() => {
-    if (isLoading) {
-      return; // No hacer nada mientras carga
-    }
-
-    const isAuthRoute = AUTH_ROUTES.some(route => pathname.startsWith(route));
-
-    // Si el perfil está incompleto, redirigir a onboarding, excepto si ya está en una ruta de autenticación.
-    if (user && !user.isProfileComplete && !isAuthRoute) {
-      router.replace('/onboarding');
-      return;
-    }
-
-    if (!user && !isAuthRoute) {
-      // Usuario no logueado Y no está en una página de auth -> redirigir a login
-      router.replace('/login');
-    } else if (user && user.isProfileComplete && isAuthRoute) {
-      // Usuario logueado con perfil completo Y está en una página de auth -> redirigir a la app
-      router.replace('/');
-    }
+    // ... (lógica comentada) ...
   }, [user, isLoading, pathname, router]);
+  */
+  // --- FIN useEffect ---
 
-  if (isLoading || (!user && !AUTH_ROUTES.some(route => pathname.startsWith(route)))) {
-    // Muestra el spinner mientras se determina el estado de auth o si estamos redirigiendo.
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+  if (isLoading) {
+     return (
+       <div className="flex items-center justify-center min-h-screen">
+         <Loader2 className="h-8 w-8 animate-spin text-primary" />
+       </div>
+     );
   }
 
   const isAuthRoute = AUTH_ROUTES.some(route => pathname.startsWith(route));
@@ -51,8 +36,9 @@ function AppContent({ children }: { children: ReactNode }) {
 
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-md flex-col bg-background">
+      {console.log("Rendering AppContent - User:", !!user, "Path:", pathname)}
       <main className="flex-1 pb-28 px-6 pt-6">{children}</main>
-      {showNav && <BottomNav />}
+      {showNav && <BottomNav />} {/* <-- Descomentado */}
     </div>
   );
 }
@@ -62,9 +48,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="en" className="light">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        {/* --- CORRECCIÓN AQUÍ --- */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* --- FIN CORRECCIÓN --- */}
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <title>HealthScan Pro</title>
         <meta name="description" content="Scan, understand, and choose healthier products." />
@@ -72,7 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body className="font-body antialiased bg-background">
         <UserDataProvider>
           <AppContent>{children}</AppContent>
-          <Toaster />
+          <Toaster /> {/* <-- Descomentado */}
         </UserDataProvider>
       </body>
     </html>
