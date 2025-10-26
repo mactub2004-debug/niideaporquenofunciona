@@ -4,19 +4,20 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos', // Para onboarding y MOCK_USER
+        hostname: 'picsum.photos', // NECESARIO
         port: '',
         pathname: '/**',
       },
        {
         protocol: 'https',
-        hostname: 'images.unsplash.com', // Para placeholder-images.json
+        hostname: 'images.unsplash.com', // Probablemente necesario también
         port: '',
         pathname: '/**',
       },
+      // Agrega otros si los necesitas
     ],
   },
-  // Mantén el resto de tu configuración si existe
+  // ...cualquier otra configuración que tengas...
 };
 
 export default nextConfig;
