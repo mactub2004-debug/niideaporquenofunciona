@@ -36,7 +36,6 @@ function AppContent({ children }: { children: ReactNode }) {
 
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-md flex-col bg-background">
-      {console.log("Rendering AppContent - User:", !!user, "Path:", pathname)}
       <main className="flex-1 pb-28 px-6 pt-6">{children}</main>
       {showNav && <BottomNav />} {/* <-- Descomentado */}
     </div>
