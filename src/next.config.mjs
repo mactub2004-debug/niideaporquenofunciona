@@ -1,23 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Añade o modifica la sección 'images' así:
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
+        hostname: 'picsum.photos', 
         port: '',
-        pathname: '/**', // Permite cualquier ruta dentro de picsum.photos
+        pathname: '/**',
       },
        {
         protocol: 'https',
-        hostname: 'images.unsplash.com', // Añadido para las imágenes de Unsplash
+        hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',
       },
     ],
   },
-  // Asegúrate de mantener el resto de tu configuración si existe
+  // Mantén el resto de tu configuración si existe
 };
 
 export default nextConfig;

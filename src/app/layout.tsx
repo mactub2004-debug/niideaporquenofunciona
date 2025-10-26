@@ -19,9 +19,9 @@ function AppContent({ children }: { children: ReactNode }) {
     if (isLoading) {
       return; // No hacer nada mientras carga
     }
-    
+
     const isAuthRoute = AUTH_ROUTES.some(route => pathname.startsWith(route));
-    
+
     // Si el perfil está incompleto, redirigir a onboarding, excepto si ya está en una ruta de autenticación.
     if (user && !user.isProfileComplete && !isAuthRoute) {
       router.replace('/onboarding');
@@ -48,7 +48,7 @@ function AppContent({ children }: { children: ReactNode }) {
 
   const isAuthRoute = AUTH_ROUTES.some(route => pathname.startsWith(route));
   const showNav = !isAuthRoute && !!user;
-  
+
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-md flex-col bg-background">
       <main className="flex-1 pb-28 px-6 pt-6">{children}</main>
@@ -62,7 +62,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="en" className="light">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* --- CORRECCIÓN AQUÍ --- */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* --- FIN CORRECCIÓN --- */}
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <title>HealthScan Pro</title>
         <meta name="description" content="Scan, understand, and choose healthier products." />
