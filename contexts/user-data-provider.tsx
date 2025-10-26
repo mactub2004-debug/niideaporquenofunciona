@@ -109,7 +109,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
         healthGoals: [],
         shoppingList: [],
         scanHistory: [],
-        onboardingComplete: false,
     };
     setUsers(prevUsers => [...prevUsers, newUser]);
     setCurrentUser(newUser);
@@ -141,7 +140,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   const setHealthGoal = (goalId: string) => {
     updateUser(user => {
       const healthGoals = user.healthGoals[0] === goalId ? [] : [goalId];
-      return { ...user, healthGoals, onboardingComplete: true };
+      return { ...user, healthGoals };
     });
   };
 
