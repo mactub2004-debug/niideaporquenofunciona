@@ -75,8 +75,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const login = (email: string): boolean => {
-    const userToLogin = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+const login = (email: string): boolean => {
+    // Salvaguarda: Asegurarse de que 'users' sea tratado como array
+    const userList = Array.isArray(users) ? users : [];
+    const userToLogin = userList.find(u => u.email.toLowerCase() === email.toLowerCase());
     if (userToLogin) {
       setCurrentUser(userToLogin);
       try {

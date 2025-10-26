@@ -20,7 +20,6 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
-        // ... (el resto de las clases como estaban) ...
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
         caption: "flex justify-center pt-1 relative items-center",
@@ -55,8 +54,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: () => <ChevronLeft className="h-4 w-4" />, // Corrección aplicada
-        IconRight: () => <ChevronRight className="h-4 w-4" />, // Corrección aplicada
+        IconLeft: ({ ...props_ }) => <ChevronLeft className="h-4 w-4" {...props_} />, // Corrección aplicada
+        IconRight: ({ ...props_ }) => <ChevronRight className="h-4 w-4" {...props_} />, // Corrección aplicada
       }}
       {...props}
     />

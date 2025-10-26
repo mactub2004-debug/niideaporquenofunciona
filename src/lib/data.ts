@@ -214,6 +214,7 @@ export const MOCK_USER: User = {
   healthGoals: ['reduce_sugar'],
   shoppingList: ['1', '4'],
   scanHistory: ['3', '2', '1', '5'],
+  isProfileComplete: true, // <-- ¡Propiedad Añadida!
 };
 
 export const MOCK_USERS: User[] = [
@@ -228,5 +229,6 @@ export const MOCK_USERS: User[] = [
       healthGoals: [],
       shoppingList: ['4', '5'],
       scanHistory: ['6', '1'],
+      isProfileComplete: true, // <-- ¡Propiedad Añadida!
     }
 ]
