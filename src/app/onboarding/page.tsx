@@ -43,7 +43,7 @@ export default function OnboardingPage() {
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-md flex-col justify-center bg-background px-6">
       <div className="text-center mb-8">
-        <PageHeader 
+        <PageHeader
           title="Welcome to HealthScan Pro"
           subtitle="Your guide to healthier shopping."
         />
@@ -57,7 +57,15 @@ export default function OnboardingPage() {
                 <Card>
                   <CardContent className="flex flex-col items-center justify-center p-6 gap-4 text-center">
                      <div className="relative w-full h-48 rounded-lg overflow-hidden bg-muted">
-                        <Image src={step.image} alt={step.title} fill className="object-cover" data-ai-hint={step.imageHint} />
+                        {/* --- CORRECCIÓN AQUÍ --- */}
+                        <Image
+                            src={step.image}
+                            alt={step.title}
+                            width={400}
+                            height={300}
+                            className="object-cover w-full h-full"
+                            data-ai-hint={step.imageHint} />
+                        {/* --- FIN CORRECCIÓN --- */}
                      </div>
                      <step.icon className="h-8 w-8 text-primary mt-2" />
                     <h3 className="text-xl font-semibold">{step.title}</h3>
