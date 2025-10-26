@@ -46,5 +46,5 @@ export type User = {
   healthGoals: string[];
   shoppingList: string[];
   scanHistory: string[];
-  isProfileComplete: boolean;
+  isProfileComplete: boolean; // <-- Propiedad añadida
 };

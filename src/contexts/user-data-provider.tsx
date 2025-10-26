@@ -42,7 +42,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
         const user = initialUsers.find((u: User) => u.email === storedUserEmail) || null;
         setCurrentUser(user);
       }
-      
+
       const storedLang = localStorage.getItem('language') as Language | null;
       if (storedLang) {
         setLanguage(storedLang);
@@ -97,7 +97,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       console.error("Could not access localStorage.", error);
     }
   };
-  
+
   const signup = (name: string, email: string) => {
     const newUser: User = {
         name,
@@ -109,6 +109,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
         healthGoals: [],
         shoppingList: [],
         scanHistory: [],
+        isProfileComplete: false, // <-- Propiedad inicializada
     };
     setUsers(prevUsers => [...prevUsers, newUser]);
     setCurrentUser(newUser);
@@ -127,7 +128,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       return { ...user, allergies };
     });
   };
-  
+
   const toggleDiet = (dietId: string) => {
     updateUser(user => {
       const diet = user.diet.includes(dietId)
@@ -152,7 +153,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       return { ...user, shoppingList };
     });
   };
-  
+
   const addScanToHistory = useCallback((productId: string) => {
     updateUser(user => {
         if (user.scanHistory[0] === productId) {
@@ -177,18 +178,18 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  const value = { 
-      user: currentUser, 
+  const value = {
+      user: currentUser,
       isLoading,
       language,
-      login, 
-      logout, 
-      signup, 
-      toggleAllergy, 
-      toggleDiet, 
+      login,
+      logout,
+      signup,
+      toggleAllergy,
+      toggleDiet,
       setHealthGoal,
-      toggleShoppingListItem, 
-      addScanToHistory, 
+      toggleShoppingListItem,
+      addScanToHistory,
       clearShoppingList,
       toggleLanguage,
   };
