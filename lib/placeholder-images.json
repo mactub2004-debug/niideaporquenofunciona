@@ -1,0 +1,46 @@
+{
+  "placeholderImages": [
+    {
+      "id": "product-1",
+      "description": "Organic Granola with nuts and berries in a bowl.",
+      "imageUrl": "https://images.unsplash.com/photo-1648663939143-124a4f0aaf9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxncmFub2xhJTIwYm93bHxlbnwwfHx8fDE3NjEwNzA2NDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "granola bowl"
+    },
+    {
+      "id": "product-2",
+      "description": "Spicy tortilla chips in a bowl.",
+      "imageUrl": "https://images.unsplash.com/photo-1652830673949-750c8aa2b078?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dG9ydGlsbGElMjBjaGlwc3xlbnwwfHx8fDE3NjEwNzA2NDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tortilla chips"
+    },
+    {
+      "id": "product-3",
+      "description": "Colorful sugary breakfast cereal in a bowl.",
+      "imageUrl": "https://images.unsplash.com/photo-1640765730039-77589c1b7fac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjZXJlYWwlMjBib3dsfGVufDB8fHx8MTc2MTA3MDY0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cereal bowl"
+    },
+    {
+      "id": "product-4",
+      "description": "A bottle of Greek yogurt.",
+      "imageUrl": "https://images.unsplash.com/photo-1571230389215-b34a89739ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxncmVlayUyMHlvZ3VydHxlbnwwfHx8fDE3NjEwNzA2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "greek yogurt"
+    },
+    {
+      "id": "product-5",
+      "description": "A dark chocolate bar.",
+      "imageUrl": "https://images.unsplash.com/photo-1589552950457-90dd56ef4413?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXJrJTIwY2hvY29sYXRlfGVufDB8fHx8MTc2MTA1NTk4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dark chocolate"
+    },
+    {
+      "id": "product-6",
+      "description": "A can of soda.",
+      "imageUrl": "https://images.unsplash.com/photo-1502396278361-f6ef9aeac89c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c29kYSUyMGNhbnxlbnwwfHx8fDE3NjEwNTYxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soda can"
+    },
+    {
+      "id": "user-avatar",
+      "description": "A friendly person smiling.",
+      "imageUrl": "https://images.unsplash.com/photo-1542596768-5d1d21f1cf98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2MDk1NTA4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    }
+  ]
+}
